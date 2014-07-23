@@ -1,5 +1,6 @@
 class Exercise < ActiveRecord::Base
   has_many :workout_exercises
+  validates :seconds_duration, :name, :description, presence: true
 
   def self.timed_set(category, min_time)
     exercises = []
