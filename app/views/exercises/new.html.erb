@@ -1,10 +1,20 @@
 <div class="container">
+  <% if @exercise.errors.any? %>
+    <div id="error-explanation">
+      <p><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</p>
+      <ul>
+        <% @exercise.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="row">
     <div class="panel panel-default">
-        <div class="col-md-1"></div>
-        <div class = "panel-body">
-        <div class="col-md-10">
-          <h3 class="text-center">New Exercise</h3>
+      <h3 class="text-center">New Exercise</h3>
+      <div class = "panel-body">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
           <%= form_for @exercise, url: {action: "create"}, class: "form", role: "form" do |f| %>
           <div class="form-group">
             <%= f.label :name %>
@@ -31,8 +41,8 @@
           </div>
           <% end %>
         </div>
-        </div> <!-- ./panel-body -->
-      <div class="col-md-1"></div>
+        <div class="col-md-2"></div>
+      </div> <!-- ./panel-body -->
     </div> <!-- /.panel -->
-  </div> <!--  /.row -->
+  </div> <!-- /.row -->
 </div> <!-- /.container -->

@@ -36,7 +36,7 @@ class ExercisesController < ApplicationController
       flash[:notice] = "Exercise created successfully"
       redirect_to workouts_path
     else
-      flash[:notice] = "Unable to save exercise"
+      render action: "new"
     end
   end
 
