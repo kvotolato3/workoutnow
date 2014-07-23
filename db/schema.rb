@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723151249) do
+ActiveRecord::Schema.define(version: 20140723212146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "exercises", force: true do |t|
-    t.string   "name"
-    t.integer  "seconds_duration"
+    t.string   "name",             null: false
+    t.integer  "seconds_duration", null: false
     t.integer  "repetitions"
-    t.text     "description"
+    t.text     "description",      null: false
     t.string   "photo_url"
     t.string   "category"
     t.datetime "created_at"
