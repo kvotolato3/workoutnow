@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('.navbar-toggle').click(App.toggleCollapse);
+});
+
+var App = App || {};
+
+App.toggleCollapse = function() {
+  var $target = $(this).attr("data-target");
+  $('#' + $target).collapse('toggle');
+  };
+
+
