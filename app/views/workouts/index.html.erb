@@ -1,13 +1,16 @@
 <div class="container">
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
-    <h1>My saved workouts</h1>
-      <ul>
-      <% @workouts.each do |workout| %>
-        <li><%= link_to workout.name, workout_path(workout) %> | Duration: <%= workout.duration %> minutes<br>
-        </li>
-      <% end %>
-      </ul>
+  <div class="row">
+    <div class="col-md-4">
+      <h3>My saved workouts</h3>
+        <table class="table table-condensed">
+        <% @workouts.each do |workout| %>
+          <tr>
+          <td><%= link_to workout.name, workout_path(workout) %></td>
+          <td class="text-right"><%= workout.duration %> minutes</td>
+          </tr>
+        <% end %>
+        </table>
+    </div>
+    <div class="col-md-6"></div>
   </div>
-  <div class="col-md-2"></div>
 </div>
