@@ -23,5 +23,27 @@ class ExercisesController < ApplicationController
       @workout = Workout.new
     end
   end
+
+  def new
+    @exercise = Exercise.new
+  end
+
+  def create
+    @exercise = Exercise.new(exercise_params)
+    @exercise.user_id = current_user.id
+
+    if @exercise.save
+      flash[:notice] = "Exercise created successfully"
+      redirect_to workouts_path
+    else
+      flash[:notice] = "Unable to save exercise"
+    end
+  end
+
+private
+  def exercise_params
+    params.require(:exercise).permit(:name, :description, :seconds_duration, :repetitions, :photo_url, :category, :source_url)
+  end
+
 end
 

@@ -13,6 +13,15 @@
     </div>
     <div class="col-md-8">
       <h3>Exercises I've created</h3>
+      <ul>
+      <% @my_exercises.each do |exercise| %>
+      <li><%= exercise.name %>
+      | <%= exercise.seconds_duration %>
+      | <%= exercise.repetitions %>
+      | <%= exercise.description %></li>
+
+      <% end %>
+      </ul>
     </div>
   </div>
 </div>
