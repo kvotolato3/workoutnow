@@ -1,6 +1,7 @@
 class Exercise < ActiveRecord::Base
   has_many :workout_exercises
   validates :seconds_duration, :name, :description, presence: true
+  validates :source_url, format: { with: /\Ahttp[s]?\:\/\/.*/, message: "must be a valid url" }
 
   def self.timed_set(category, min_time)
     exercises = []
