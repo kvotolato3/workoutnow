@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   # If User gets deleted, all workouts should be deleted as well
   has_many :workouts, dependent: :destroy
+  has_many :exercises
 end
