@@ -1,8 +1,8 @@
 class Exercise < ActiveRecord::Base
   has_many :workout_exercises
+  belongs_to :user
   validates :seconds_duration, :name, :description, presence: true
-  validates :source_url, format: { with: /\Ahttp[s]?\:\/\/.*/, message: "must be a valid url" }
-
+  validates :source_url, format: { with: /\Ahttp[s]?\:\/\/.*/, message: "must be a valid url", allow_blank: true}
   def self.timed_set(category, min_time)
     exercises = []
     exercises << Exercise.where(category: category).sample
