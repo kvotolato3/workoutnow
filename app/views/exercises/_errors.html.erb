@@ -1,0 +1,10 @@
+<% if exercise.errors.any? %>
+  <div id="error-explanation">
+    <p><%= pluralize(exercise.errors.count, "error") %> prohibited this exercise from being saved:</p>
+    <ul>
+      <% exercise.errors.full_messages.each do |msg| %>
+      <li> <%= msg %> </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

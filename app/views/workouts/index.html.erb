@@ -18,7 +18,8 @@
       <li><%= exercise.name %>
       | <%= exercise.seconds_duration %>
       | <%= exercise.repetitions %>
-      | <%= exercise.description %></li>
+      | <%= exercise.description %>
+      | <%= link_to "Edit", edit_exercise_path(exercise) %></li>
 
       <% end %>
       </ul>

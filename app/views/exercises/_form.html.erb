@@ -1,0 +1,30 @@
+<div class="col-md-2"></div>
+<div class="col-md-8">
+  <%= form_for exercise, class: "form", role: "form" do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :seconds_duration %>
+    <%= f.number_field :seconds_duration, min: 0, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :repetitions %>
+    <%= f.number_field :repetitions, min: 0, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :source_url %>
+    <%= f.text_field :source_url, class: "form-control"%>
+  </div>
+  <div class="text-right">
+    <%= f.submit class: "btn btn-default" %>
+  </div>
+  <% end %>
+</div>
+<div class="col-md-2"></div>
+

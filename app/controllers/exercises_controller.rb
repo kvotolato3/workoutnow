@@ -1,4 +1,5 @@
 class ExercisesController < ApplicationController
+  before_action :set_exercise, only: [:edit, :update]
 
   def index
     # After logging in, this is where the User is always redirected.
@@ -40,7 +41,23 @@ class ExercisesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @exercise.update(exercise_params)
+      flash[:notice] = "Exercise updated successully"
+      redirect_to workouts_path
+    else
+      render action: "edit"
+    end
+  end
+
 private
+  def set_exercise
+    @exercise = Exercise.find(params[:id])
+  end
+
   def exercise_params
     params.require(:exercise).permit(:name, :description, :seconds_duration, :repetitions, :photo_url, :category, :source_url)
   end
