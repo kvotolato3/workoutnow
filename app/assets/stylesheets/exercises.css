@@ -5,6 +5,10 @@
   min-width: 610px;
   }
 
+.exercise-buttons {
+  float: right;
+  }
+
 .clearfix:after {
   content: ".";
   display: block;
