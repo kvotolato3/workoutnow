@@ -1,10 +1,6 @@
-Workout Now! - Ruby on Rails App
+Workout Now! (Continued)
 
-Project 1 for General Assembly Web Development Immersive Program
-
-May 23, 2014
-
-URL:  http://workoutnow.herokuapp.com
+This repository is a continuation of my [first project](https://github.com/kvotolato3/ga_wdi_p_1_workoutnow) in the General Assembly Web Development Immersive program.
 
 Description: WorkoutNow! allows you to generate fresh workouts from a database of fun Bodyweight exercises (i.e. strength exercises that do not require weights). Once the workout has been generated, Users can practice the exercises and save the workout (log in required) if they decide they like it. The database comes with 27 exercises.
 
