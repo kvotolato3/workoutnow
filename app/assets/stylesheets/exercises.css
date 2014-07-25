@@ -1,10 +1,28 @@
-.exercise-thumbnail-cell {
-  max-width: 400px;
-}
+.exercise-container {
+  border: 2px solid #BEC3BC;
+  margin: 5px;
+  padding: 10px;
+  min-width: 610px;
+  }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  }
+
+.clearfix {display: inline-block;}
+
+.exercise-thumbnail {
+  max-width: 100px;
+  float: left;
+  }
 
 .exercise-thumb-img {
   max-width: 100%;
-  padding: 10px 10px 10px 0px;
-}
+  padding: 10px 10px 10px 10px;
+  }
 
 

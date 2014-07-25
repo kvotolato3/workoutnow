@@ -13,38 +13,31 @@
     </div>
     <div class="col-md-8">
       <h3>Exercises I've created</h3>
-        <table class="exercises-table">
-
-          <% @my_exercises.each do |exercise| %>
-            <tbody>
-              <tr>
-              <td colspan="2"><strong><%= exercise.name %></strong> Reps: <%= exercise.repetitions %> Duration: <%= exercise.seconds_duration %> seconds</td>
-              </tr>
-              <tr>
-              <td class="exercise-thumbnail-cell">
-                <%= link_to edit_exercise_path(exercise) do %>
-                  <% if url = exercise.photo_url %>
-                    <%= image_tag(url, class: "exercise-thumb-img") %>
-                  <% else %>
-                  <img data-src="holder.js/100%x100" alt="holder" class="exercise-thumb-img">
-                  <% end %>
-                <% end %>
-              </td>
-              <td>
-                <ul>
-                <li><%= exercise.description %></li>
-                <% if exercise.source_url != ""%>
-                  <li><em>Source: <%= exercise.source_url %></em></li>
-                <% end %>
-                </ul>
-              </td>
-              </tr>
-              <tr>
-              <td colspan="2">Category: <%= exercise.category %></td>
-              </tr>
-          <% end %>
-          </tbody>
-        </table>
+      <% @my_exercises.each do |exercise| %>
+        <div class="exercise-container clearfix">
+          <h5>
+          <%= exercise.name %>
+          Reps: <%= exercise.repetitions %>
+          Duration: <%= exercise.seconds_duration %> seconds
+          </h5>
+          <div class="exercise-thumbnail">
+            <%= link_to edit_exercise_path(exercise) do %>
+              <% if url = exercise.photo_url %>
+                <%= image_tag(url, class: "exercise-thumb-img") %>
+              <% else %>
+              <img data-src="holder.js/100%x100" alt="holder" class="exercise-thumb-img">
+              <% end %>
+            <% end %>
+          </div>
+            <ul>
+            <li><%= exercise.description %></li>
+            <% if exercise.source_url != ""%>
+              <li><em>Source: <%= exercise.source_url %></em></li>
+            <% end %>
+            </ul>
+          Category: <%= exercise.category %>
+        </div><!-- /.exercise-container -->
+      <% end %>
     </div>
   </div><!-- /.row -->
 </div><!-- /.container -->
