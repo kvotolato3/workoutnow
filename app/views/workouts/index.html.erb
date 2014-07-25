@@ -20,6 +20,7 @@
           Reps: <%= exercise.repetitions %>
           Duration: <%= exercise.seconds_duration %> seconds
           </h5>
+          <%= link_to "Delete", exercise_path(exercise), class: "btn btn-danger btn-xs", method: "delete", data: { confirm: 'Are you sure you want to delete this exercise?' } %>
           <div class="exercise-thumbnail">
             <%= link_to edit_exercise_path(exercise) do %>
               <% if url = exercise.photo_url %>

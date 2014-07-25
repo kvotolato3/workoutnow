@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-  before_action :set_exercise, only: [:edit, :update]
+  before_action :set_exercise, only: [:edit, :update, :destroy]
 
   def index
     # After logging in, this is where the User is always redirected.
@@ -50,6 +50,16 @@ class ExercisesController < ApplicationController
       redirect_to workouts_path
     else
       render action: "edit"
+    end
+  end
+
+  def destroy
+    if @exercise.destroy
+      flash[:notice] = "Exercise has been deleted."
+      redirect_to :back
+    else
+      flash[:notice] = "The exercise could not be deleted."
+      redirect_to :back
     end
   end
 
