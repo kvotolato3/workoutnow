@@ -13,16 +13,38 @@
     </div>
     <div class="col-md-8">
       <h3>Exercises I've created</h3>
-      <ul>
-      <% @my_exercises.each do |exercise| %>
-      <li><%= exercise.name %>
-      | <%= exercise.seconds_duration %>
-      | <%= exercise.repetitions %>
-      | <%= exercise.description %>
-      | <%= link_to "Edit", edit_exercise_path(exercise) %></li>
+        <table class="exercises-table">
 
-      <% end %>
-      </ul>
+          <% @my_exercises.each do |exercise| %>
+            <tbody>
+              <tr>
+              <td colspan="2"><strong><%= exercise.name %></strong> Reps: <%= exercise.repetitions %> Duration: <%= exercise.seconds_duration %> seconds</td>
+              </tr>
+              <tr>
+              <td class="exercise-thumbnail-cell">
+                <%= link_to edit_exercise_path(exercise) do %>
+                  <% if url = exercise.photo_url %>
+                    <%= image_tag(url, class: "exercise-thumb-img") %>
+                  <% else %>
+                  <img data-src="holder.js/100%x100" alt="holder" class="exercise-thumb-img">
+                  <% end %>
+                <% end %>
+              </td>
+              <td>
+                <ul>
+                <li><%= exercise.description %></li>
+                <% if exercise.source_url != ""%>
+                  <li><em>Source: <%= exercise.source_url %></em></li>
+                <% end %>
+                </ul>
+              </td>
+              </tr>
+              <tr>
+              <td colspan="2">Category: <%= exercise.category %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
     </div>
-  </div>
-</div>
+  </div><!-- /.row -->
+</div><!-- /.container -->
