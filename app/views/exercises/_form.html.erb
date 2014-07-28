@@ -21,6 +21,10 @@
     <%= f.label :source_url %>
     <%= f.text_field :source_url, class: "form-control"%>
   </div>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.select :category, options_for_select([['Bodyweight','Bodyweight']]), class: "form-control"%>
+  </div>
   <div class="text-right">
     <%= f.submit class: "btn btn-default" %>
   </div>
