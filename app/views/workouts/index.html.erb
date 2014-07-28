@@ -2,9 +2,20 @@
   <div class="row">
     <div class="col-md-4">
       <h3>
-        <span class="fa fa-plus-square-o"></span>
+        <span class="fa fa-plus-square-o" id="plus-workout"></span>
         My saved workouts
       </h3>
+      <div id="workout-form" style="display: none;">
+        <div class="panel panel-default">
+          <form class="form-inline" role="form">
+            <span class="fa fa-times-circle" id="cncl-workout"></span>
+            <div class="form-group">
+            <input type="text" placeholder="Untitled Workout" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary btn-xs">Save</button>
+          </form>
+        </div>
+      </div>
         <table class="table table-condensed">
         <% @workouts.each do |workout| %>
           <tr>
