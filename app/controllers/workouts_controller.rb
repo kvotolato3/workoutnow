@@ -7,10 +7,10 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    @exercises = params[:workout]["exercise_ids"].split(',')
     @workout = Workout.new
+    @exercises = params[:workout]["exercise_ids"].split(',')
     @exercises.each do |exercise|
-      @workout.exercises << Exercise.find(exercise.to_i)
+    @workout.exercises << Exercise.find(exercise.to_i)
     end
 
     # We have two options here:
