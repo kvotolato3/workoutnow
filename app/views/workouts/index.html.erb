@@ -7,18 +7,18 @@
       </h3>
       <div id="workout-form" style="display: none;">
         <div class="panel panel-default">
-          <form class="form-inline" role="form" id="inline-workout-form">
-            <span class="fa fa-times-circle" id="cncl-workout"></span>
-            <div class="form-group">
-            <input type="text" placeholder="Untitled Workout" class="form-control" name="workout_name" id="workout_name">
+          <%= form_for @workout, remote: true, class: "form-inline", id: "inline-workout-form" do |f| %>
+            <span class='fa fa-times-circle' id='cncl-workout'></span>
+            <div class='form-group'>
+            <%= f.text_field :name, class: 'form-control', id: 'workout[name]', placeholder: 'Untitled Workout', value:'' %>
             </div>
-            <button type="submit" class="btn btn-primary btn-xs">Save</button>
-          </form>
+            <%= f.submit 'Save', class:'btn btn-primary btn-xs' %>
+          <% end %>
         </div>
       </div>
         <table class="table table-condensed" id="workouts_table">
         <% @workouts.each do |workout| %>
-          <%= render "workout_item", workout: workout %>
+          <%= render "workout", workout: workout %>
         <% end %>
         </table>
     </div>
