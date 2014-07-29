@@ -16,20 +16,4 @@ App.hideWorkoutForm = function() {
   $('#plus-workout').show();
 };
 
-App.saveWorkout = function() {
-  event.preventDefault();
-  var $name = $('input[name=workout_name]').val();
-  $.ajax({
-    url: '/api/v1/workouts',
-    type: 'POST',
-    data: {'workout': {'name': $name}},
-    dataType: 'json'
-  }).done(App.appendMyWorkouts);
-};
 
-App.appendMyWorkouts = function(result) {
-  console.log(result);
-  var newElement = $('<tr><td></td><td></td></tr>');
-  console.log(newElement);
-
-};
