@@ -7,7 +7,7 @@
       </h3>
       <div id="workout-form" style="display: none;">
         <div class="panel panel-default">
-          <%= form_for @workout, remote: true, class: "form-inline", id: "inline-workout-form" do |f| %>
+          <%= form_for @workout, remote: true, html: {class: "form-inline", id: "inline-workout-form"} do |f| %>
             <span class='fa fa-times-circle' id='cncl-workout'></span>
             <div class='form-group'>
             <%= f.text_field :name, class: 'form-control', id: 'workout[name]', placeholder: 'Untitled Workout', value:'' %>
