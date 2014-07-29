@@ -18,10 +18,7 @@
       </div>
         <table class="table table-condensed" id="workouts_table">
         <% @workouts.each do |workout| %>
-          <tr>
-          <td><%= link_to workout.name, workout_path(workout) %></td>
-          <td class="text-right"><%= workout.duration %> minutes</td>
-          </tr>
+          <%= render "workout_item", workout: workout %>
         <% end %>
         </table>
     </div>
