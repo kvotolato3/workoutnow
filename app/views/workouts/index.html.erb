@@ -7,16 +7,16 @@
       </h3>
       <div id="workout-form" style="display: none;">
         <div class="panel panel-default">
-          <form class="form-inline" role="form">
+          <form class="form-inline" role="form" id="inline-workout-form">
             <span class="fa fa-times-circle" id="cncl-workout"></span>
             <div class="form-group">
-            <input type="text" placeholder="Untitled Workout" class="form-control">
+            <input type="text" placeholder="Untitled Workout" class="form-control" name="workout_name" id="workout_name">
             </div>
             <button type="submit" class="btn btn-primary btn-xs">Save</button>
           </form>
         </div>
       </div>
-        <table class="table table-condensed">
+        <table class="table table-condensed" id="workouts_table">
         <% @workouts.each do |workout| %>
           <tr>
           <td><%= link_to workout.name, workout_path(workout) %></td>
