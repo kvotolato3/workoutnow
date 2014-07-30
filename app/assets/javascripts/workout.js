@@ -3,9 +3,9 @@ $(document).ready(function(){
   $('#cncl-workout').click(App.hideWorkoutForm);
   $('.exercise-container').on('dragstart', function(e, ui){
     var exId = $(this).attr('data-exercise-id');
-    e.data = {'exerciseId': exId};
     e.originalEvent.dataTransfer.effectAllowed = "copy";
-    console.log("data: " + e.data);
+    e.originalEvent.dataTransfer.setData('text', exId);
+    console.log("data: " + e.originalEvent.dataTransfer.getData('text'));
   });
   $('.wo-row').on('dragover', function(e){
     if (e.preventDefault) {
@@ -14,11 +14,28 @@ $(document).ready(function(){
     e.originalEvent.dataTransfer.dropEffect = "copy";
     return false;
   });
-  $('.wo-row').on('dragenter', function(e){
+  $('.wo-row').on('dragenter', function(){
     $(this).addClass("over");
   });
-  $('.wo-row').on('dragleave', function(e){
+  $('.wo-row').on('dragleave', function(){
     $(this).removeClass("over");
+  });
+  $('.wo-row').on('drop', function(e){
+    var woId = $(this).attr('data-workout-id');
+    var exId = e.originalEvent.dataTransfer.getData('text');
+    if (e.preventDefault) {
+      e.preventDefault();
+    }
+    if (e.stopPropagation) {
+      e.stopPropagation();
+    }
+    $(this).removeClass("over");
+    $.ajax({
+      url: '/workouts/' + woId,
+      type: 'PATCH',
+      data: {'exercise_id': exId},
+      dataType: 'json'
+    });
   });
 });
 

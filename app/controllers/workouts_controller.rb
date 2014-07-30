@@ -60,11 +60,21 @@ class WorkoutsController < ApplicationController
   end
 
   def update
-    @workout = Workout.find(params[:id])
-    if @workout.update(workout_params)
-      redirect_to workout_path(@workout)
-    else
-      render :edit
+    respond_to do |format|
+      format.html {
+        @workout = Workout.find(params[:id])
+        if @workout.update(workout_params)
+          redirect_to workout_path(@workout)
+        else
+          render :edit
+        end
+      }
+      format.json {
+        @workout = Workout.find(params[:id])
+        exercise_ids = [params[:exercise_id]]
+        @workout.add_exercises(exercise_ids)
+        render json: @workout
+      }
     end
   end
 
