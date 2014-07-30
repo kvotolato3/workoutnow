@@ -6,3 +6,7 @@
   float: right;
   padding: 4px 4px 0px 0px;
 }
+
+tr.over{
+  background-color: #BEC3BC;
+}

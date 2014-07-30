@@ -14,6 +14,12 @@ $(document).ready(function(){
     e.originalEvent.dataTransfer.dropEffect = "copy";
     return false;
   });
+  $('.wo-row').on('dragenter', function(e){
+    $(this).addClass("over");
+  });
+  $('.wo-row').on('dragleave', function(e){
+    $(this).removeClass("over");
+  });
 });
 
 var App = App || {};
