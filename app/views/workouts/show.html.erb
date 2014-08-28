@@ -2,12 +2,17 @@
 <div class="container">
   <div class="col-md-2"></div>
   <div class="col-md-8">
-    <h1><%= @workout.name %></h1>
-    <%= link_to "Edit Workout", edit_workout_path(@workout), class: "btn btn-default" %>
-    <%= link_to "Delete Workout", @workout, method: :delete, class: "btn btn-default",
-      data: { confirm: 'Are you sure you want to delete this workout?' } %>
-    <%= link_to "My Workouts", workouts_path, class: "btn btn-default" %>
-    <%= render 'displayworkout', exercises: @exercises %>
+    <div class="panel panel-default">
+    <div class="panel panel-header">
+      <div class="text-right">
+      <%= link_to '', edit_workout_path(@workout), class: "fa fa-lock", id: "wo-locked" %>
+      <%= link_to '', @workout, method: :delete, class: "fa fa-times text-right", id: "wo-remove",
+        data: { confirm: 'Are you sure you want to delete this workout?' } %>
+      </div>
+      <h1><%= @workout.name %></h1>
+    </div>
+      <%= render 'displayworkout', exercises: @exercises %>
+    </div>
   </div>
   <div class="col-md-2"></div>
 </div>

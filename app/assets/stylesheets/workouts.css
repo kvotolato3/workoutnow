@@ -6,3 +6,17 @@
   float: right;
   padding: 4px 4px 0px 0px;
 }
+
+#wo-locked{
+  text-decoration: none;
+  color: #777;
+}
+
+#wo-remove{
+  text-decoration: none;
+  color: #777;
+}
+
+.wo-exercise-photo {
+  max-width: 100%;
+}
