@@ -1,6 +1,6 @@
 
   <% entries.each do |entry| %>
-  <div class="panel panel-default clearfix">
+  <div class="panel panel-default clearfix" id="wo-exercise-<%=entry[:workout_exercise_id]%>">
   <div class="panel-heading">
   <% if @edit == true %>
     <div class="text-right">

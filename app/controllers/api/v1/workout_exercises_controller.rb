@@ -3,7 +3,7 @@ module Api
     class WorkoutExercisesController < ApplicationController
       respond_to :json
       def destroy
-        respond_with WorkoutExercise.destroy(params[:workout_exercise_id])
+        respond_with WorkoutExercise.destroy(params[:id])
       end
     end
   end

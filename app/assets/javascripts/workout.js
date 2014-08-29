@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $('#plus-workout').click(App.showWorkoutForm);
   $('#cncl-workout').click(App.hideWorkoutForm);
-  $('.wo-ex-remove').click(App.removeWorkoutExercise);
+  $('.wo-ex-remove').click(App.destroyWorkoutExercise);
 });
 
 var App = App || {};
@@ -20,19 +20,19 @@ App.clearWorkoutForm = function() {
   $('input[name="workout[name]"]').val("");
 };
 
-App.removeWorkoutExercise = function() {
+App.destroyWorkoutExercise = function(event) {
   if (window.confirm('Remove exercise from workout?') === true) {
     var $woExId = $(this).data("id");
-    var $editWoId = $('#wo-heading').data("id");
     $.ajax({
-      url: '/api/v1/workout_exercises/' + $editWoId,
+      url: '/api/v1/workout_exercises/' + $woExId,
       type: 'DELETE',
-      data: {'workout_exercise_id': $woExId},
       dataType: 'json'
-    });
-  } else {
-    // do nothing
+    }).success(App.hideWorkoutExercise($woExId));
   }
+};
+
+App.hideWorkoutExercise = function(id) {
+  $('#wo-exercise-'+ id).slideUp();
 };
 
 
