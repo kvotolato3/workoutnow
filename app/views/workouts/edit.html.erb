@@ -3,7 +3,7 @@
   <div class='col-md-10'>
   <div class='panel panel-default'>
   <div class='panel-heading'>
-    <%= form_for @workout do |f| %>
+    <%= form_for @workout, html: {id: "wo-heading", data: {id: @workout.id}} do |f| %>
     <div class='text-right'>
     <button type='submit' value='' class='fa fa-unlock btn btn-default btn-xs' id="wo-locked"> Done Editing</button>
     </div>
