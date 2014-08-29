@@ -23,7 +23,13 @@ App.clearWorkoutForm = function() {
 App.removeWorkoutExercise = function() {
   if (window.confirm('Remove exercise from workout?') === true) {
     var $woExId = $(this).data("id");
-    var $woId = $('#wo-heading').data("id");
+    var $editWoId = $('#wo-heading').data("id");
+    $.ajax({
+      url: '/api/v1/workout_exercises/' + $editWoId,
+      type: 'DELETE',
+      data: {'exercise_id': $woExId},
+      dataType: 'json'
+    });
   } else {
     // do nothing
   }

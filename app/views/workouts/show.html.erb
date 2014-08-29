@@ -11,7 +11,7 @@
         <h1><%= @workout.name %></h1>
       </div>
         <div class="panel-body">
-        <%= render 'displayworkout', exercises: @exercises %>
+        <%= render 'displayworkout', entries: @workout_exercises_array %>
         </div><!-- /.panel-body -->
       </div><!-- /.panel-default -->
     </div><!-- /.col-md-10 -->

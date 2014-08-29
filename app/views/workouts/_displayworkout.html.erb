@@ -1,22 +1,22 @@
 
-  <% exercises.each do |exercise| %>
+  <% entries.each do |entry| %>
   <div class="panel panel-default clearfix">
   <div class="panel-heading">
   <% if @edit == true %>
     <div class="text-right">
-    <i class="fa fa-times wo-ex-remove" data-id="<%= exercise.id %>"></i>
+    <i class="fa fa-times wo-ex-remove" data-id="<%= entry[:workout_exercise_id] %>"></i>
     </div>
   <% end %>
-    <h3><%= exercise.name %></h3>
+    <h3><%= entry[:exercise].name %></h3>
   </div>
     <div class="wo-exercise-img-container">
-    <%= image_tag exercise.photo_url, class: "wo-exercise-img" %>
+    <%= image_tag entry[:exercise].photo_url, class: "wo-exercise-img" %>
     </div>
     <ul>
-    <li><%= exercise.description %></li>
-    <li>Repetitions: <%= exercise.repetitions %></li>
-    <li>Duration: <%= exercise.duration %></li>
-    <li>Source: <%= exercise.source_url %></li>
+    <li><%= entry[:exercise].description %></li>
+    <li>Repetitions: <%= entry[:exercise].repetitions %></li>
+    <li>Duration: <%= entry[:exercise].duration %></li>
+    <li>Source: <%= entry[:exercise].source_url %></li>
   </div><!-- /.panel-default -->
   <% end %>
 

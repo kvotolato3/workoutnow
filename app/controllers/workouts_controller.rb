@@ -52,12 +52,24 @@ class WorkoutsController < ApplicationController
   def show
     @workout = Workout.find(params[:id])
     @exercises = @workout.exercises
+    @workout_exercises = WorkoutExercise.where(workout_id: @workout.id)
+    @workout_exercises_array = []
+    @workout_exercises.each do |wo_ex|
+      exercise_hash = {workout_exercise_id: wo_ex.id, exercise: Exercise.find(wo_ex.exercise.id)}
+      @workout_exercises_array.push(exercise_hash)
+    end
   end
 
   def edit
     @workout = Workout.find(params[:id])
     @exercises = @workout.exercises
     @edit = true
+    @workout_exercises = WorkoutExercise.where(workout_id: @workout.id)
+    @workout_exercises_array = []
+    @workout_exercises.each do |wo_ex|
+      exercise_hash = {workout_exercise_id: wo_ex.id, exercise: Exercise.find(wo_ex.exercise.id)}
+      @workout_exercises_array.push(exercise_hash)
+    end
   end
 
   def update
