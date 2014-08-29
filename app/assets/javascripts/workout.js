@@ -27,7 +27,7 @@ App.removeWorkoutExercise = function() {
     $.ajax({
       url: '/api/v1/workout_exercises/' + $editWoId,
       type: 'DELETE',
-      data: {'exercise_id': $woExId},
+      data: {'workout_exercise_id': $woExId},
       dataType: 'json'
     });
   } else {
