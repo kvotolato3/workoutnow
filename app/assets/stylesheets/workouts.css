@@ -17,6 +17,12 @@
   color: #777;
 }
 
-.wo-exercise-photo {
+.wo-exercise-img-container {
+  width: 100%;
+}
+
+.wo-exercise-img {
   max-width: 100%;
+  float: right;
+  padding: 10px;
 }

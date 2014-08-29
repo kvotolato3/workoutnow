@@ -57,6 +57,7 @@ class WorkoutsController < ApplicationController
   def edit
     @workout = Workout.find(params[:id])
     @exercises = @workout.exercises
+    @edit = true
   end
 
   def update
