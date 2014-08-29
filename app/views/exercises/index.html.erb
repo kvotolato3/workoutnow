@@ -9,7 +9,7 @@
       <%= f.hidden_field :exercise_ids, value: @exercises.map(&:id).join(",") %>
       <%= f.submit "Save this workout", class: "btn btn-default" %>
       <% end %>
-    <%= render 'workouts/displayworkout', exercises: @exercises%>
+    <%= render 'workouts/displaytempworkout', exercises: @exercises%>
     <% end %>
   </div>
   <div class="col-md-2"></div>
