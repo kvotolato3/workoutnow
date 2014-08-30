@@ -5,7 +5,7 @@
   <div class='panel-heading'>
     <%= form_for @workout, html: {id: "wo-heading", data: {id: @workout.id}} do |f| %>
     <div class='text-right'>
-    <button type='submit' value='' class='fa fa-unlock btn btn-default btn-xs' id="wo-locked"> Done Editing</button>
+    <button type='submit' value='' class='fa fa-unlock btn btn-primary btn-xs' id="wo-locked"> Done Editing</button>
     </div>
     <h1><%= f.text_field :name %></h1>
     <% end %>

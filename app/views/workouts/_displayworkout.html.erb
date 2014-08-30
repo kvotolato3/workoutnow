@@ -4,7 +4,7 @@
   <div class="panel-heading">
   <% if @edit == true %>
     <div class="text-right">
-    <i class="fa fa-times wo-ex-remove" data-id="<%= entry[:workout_exercise_id] %>"></i>
+    <button class="wo-ex-remove fa fa-times btn btn-danger btn-xs" data-id="<%= entry[:workout_exercise_id] %>"> Delete</button>
     </div>
   <% end %>
     <h3><%= entry[:exercise].name %></h3>

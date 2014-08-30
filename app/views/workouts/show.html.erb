@@ -4,8 +4,8 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <div class="text-right">
-        <%= link_to ' Edit', edit_workout_path(@workout), class: "fa fa-lock btn btn-default btn-xs", id: "wo-locked" %>
-        <%= link_to '', @workout, method: :delete, class: "fa fa-times", id: "wo-remove",
+        <%= link_to ' Edit', edit_workout_path(@workout), class: "fa fa-lock btn btn-primary btn-xs", id: "wo-locked" %>
+        <%= link_to ' Delete', @workout, method: :delete, class: "fa fa-times btn btn-danger btn-xs", id: "wo-remove",
           data: { confirm: 'Are you sure you want to delete this workout?' } %>
         </div>
         <h1><%= @workout.name %></h1>
