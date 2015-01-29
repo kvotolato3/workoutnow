@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :workout_exercises
     end
   end
+  get :about, to: 'platform#about'
 
   devise_for :users
   root 'exercises#index'
