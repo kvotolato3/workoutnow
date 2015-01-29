@@ -8,6 +8,8 @@ class WorkoutsController < ApplicationController
   end
 
   def create
+    require 'uuidtools'
+
     respond_to do |format|
       format.html {
         @workout = Workout.new
