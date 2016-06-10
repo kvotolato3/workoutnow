@@ -18,7 +18,7 @@ Instructions for local deployment:
 - Run migrations with seed data
 - Run the rails server and enjoy!
 
-Ruby version: 2.1.1p76
+Ruby version: 2.2.0
 
 
 
