@@ -6,7 +6,6 @@ $(document).ready(function(){
     var exId = $(this).attr('data-exercise-id');
     e.originalEvent.dataTransfer.effectAllowed = "copy";
     e.originalEvent.dataTransfer.setData('text', exId);
-    console.log("data: " + e.originalEvent.dataTransfer.getData('text'));
   });
   $('.wo-row').on('dragover', function(e){
     if (e.preventDefault) {
