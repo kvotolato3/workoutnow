@@ -10,3 +10,28 @@
 tr.over{
   background-color: #BEC3BC;
 }
+
+#wo-locked{
+  text-decoration: none;
+  color: #FFF;
+}
+
+#wo-remove{
+  text-decoration: none;
+  color: #FFF;
+}
+
+.wo-exercise-img-container {
+  width: 100%;
+}
+
+.wo-exercise-img {
+  max-width: 100%;
+  float: right;
+  padding: 10px;
+}
+
+.wo-ex-remove {
+  float: right;
+  color: #FFF !important;
+}

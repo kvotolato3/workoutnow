@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $('#plus-workout').click(App.showWorkoutForm);
   $('#cncl-workout').click(App.hideWorkoutForm);
+  $('.wo-ex-remove').click(App.destroyWorkoutExercise);
   $('.exercise-container').on('dragstart', function(e, ui){
     var exId = $(this).attr('data-exercise-id');
     e.originalEvent.dataTransfer.effectAllowed = "copy";
@@ -53,6 +54,21 @@ App.hideWorkoutForm = function() {
 
 App.clearWorkoutForm = function() {
   $('input[name="workout[name]"]').val("");
+};
+
+App.destroyWorkoutExercise = function(event) {
+  if (window.confirm('Remove exercise from workout?') === true) {
+    var $woExId = $(this).data("id");
+    $.ajax({
+      url: '/api/v1/workout_exercises/' + $woExId,
+      type: 'DELETE',
+      dataType: 'json'
+    }).success(App.hideWorkoutExercise($woExId));
+  }
+};
+
+App.hideWorkoutExercise = function(id) {
+  $('#wo-exercise-'+ id).slideUp();
 };
 
 

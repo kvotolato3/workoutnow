@@ -1,0 +1,16 @@
+  <% exercises.each do |exercise| %>
+  <ul>
+    <h3><li><%= exercise.name %></li></h3>
+    <div class="row">
+    <div class="col-md-6">
+    <li><%= exercise.description %></li>
+    <li>Repetitions: <%= exercise.repetitions %></li>
+    <li>Duration: <%= exercise.duration %></li>
+    <li class='source_url'>Source: <%= exercise.source_url %></li>
+    </div>
+    <div class="col-md-6">
+    <li><%= image_tag exercise.photo_url %></li>
+    </div>
+  </ul>
+  <% end %>
+</div>

@@ -1,4 +1,4 @@
-Workout Now! (Continued)
+[Workout Now!](https://workoutnow.herokuapp.com/)
 
 This repository is a continuation of my [first project](https://github.com/kvotolato3/ga_wdi_p_1_workoutnow) in the General Assembly Web Development Immersive program.
 
@@ -18,7 +18,7 @@ Instructions for local deployment:
 - Run migrations with seed data
 - Run the rails server and enjoy!
 
-Ruby version: 2.1.1p76
+Ruby version: 2.2.0
 
 
 

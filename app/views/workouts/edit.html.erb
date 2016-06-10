@@ -1,14 +1,19 @@
-
-<%= render 'shared/workoutgenerator'%>
-
-<div class="container">
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
-  <%= form_for @workout do |f| %>
-  <h1><%= f.text_field :name %></h1>
-  <%= f.submit class: "btn btn-default" %>
-  <% end %>
-  <%= render 'displayworkout', exercises: @exercises %>
+<div class='container'>
+  <div class='col-md-1'></div>
+  <div class='col-md-10'>
+  <div class='panel panel-default'>
+  <div class='panel-heading'>
+    <%= form_for @workout, html: {id: "wo-heading", data: {id: @workout.id}} do |f| %>
+    <div class='text-right'>
+    <button type='submit' value='' class='fa fa-unlock btn btn-primary btn-xs' id="wo-locked"> Done Editing</button>
+    </div>
+    <h1><%= f.text_field :name %></h1>
+    <% end %>
   </div>
-  <div class="col-md-2"></div>
-</div>
+    <div class='panel-body'>
+    <%= render 'displayworkout', entries: @workout_exercises_array %>
+    </div>
+  </div>
+  <div class='col-md-1'></div>
+  </div><!-- /.panel-default -->
+</div><!-- /.container -->
